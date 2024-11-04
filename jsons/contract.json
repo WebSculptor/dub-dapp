@@ -1,0 +1,618 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "userAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "workspaceSlug",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "shortCode",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "longUrl",
+        "type": "string"
+      }
+    ],
+    "name": "LinkCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "userAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "workspaceSlug",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "shortCode",
+        "type": "string"
+      }
+    ],
+    "name": "LinkDeleted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "shortCode",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "longURL",
+        "type": "string"
+      }
+    ],
+    "name": "URLShortened",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "userAddress",
+        "type": "address"
+      }
+    ],
+    "name": "UserDeleted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "userAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "userName",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "avatar",
+        "type": "string"
+      }
+    ],
+    "name": "UserRegistered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "userAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "workspaceName",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "workspaceSlug",
+        "type": "string"
+      }
+    ],
+    "name": "WorkspaceCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "userAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "workspaceSlug",
+        "type": "string"
+      }
+    ],
+    "name": "WorkspaceDeleted",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_workspaceSlug",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "shortCode",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "longURL",
+        "type": "string"
+      }
+    ],
+    "name": "addLink",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_user",
+        "type": "address"
+      }
+    ],
+    "name": "checkRegisteredUser",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_username",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_avatar",
+        "type": "string"
+      }
+    ],
+    "name": "createAccount",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_slug",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_cid",
+        "type": "string"
+      }
+    ],
+    "name": "createWorkspace",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "deleteAccount",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_workspaceSlug",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "shortCode",
+        "type": "string"
+      }
+    ],
+    "name": "deleteLink",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_slug",
+        "type": "string"
+      }
+    ],
+    "name": "deleteWorkspace",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "workspaceSlug",
+        "type": "string"
+      }
+    ],
+    "name": "getAllLinkShortCodes",
+    "outputs": [
+      {
+        "internalType": "string[]",
+        "name": "",
+        "type": "string[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "workspaceSlug",
+        "type": "string"
+      }
+    ],
+    "name": "getAllLinks",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "shortCode",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "longUrl",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "clicks",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "createdAt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "sharable",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "isLinkDeleted",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct URLShortener.Link[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAllWorkspaces",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "slug",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "cid",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "links",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "clicks",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "createdAt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isWorkspaceDeleted",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct URLShortener.Workspace[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "shortCode",
+        "type": "string"
+      }
+    ],
+    "name": "getLongURL",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "shortCode",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "longUrl",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "clicks",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "createdAt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "sharable",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "isLinkDeleted",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct URLShortener.Link",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_user",
+        "type": "address"
+      }
+    ],
+    "name": "getUserCredentials",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "userName",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "avatar",
+            "type": "string"
+          },
+          {
+            "internalType": "address",
+            "name": "userAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "workspaces",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isRegistered",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "isAccountDeleted",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct URLShortener.Credential",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "urlMappings",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "userWorkspaceSlugs",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "workspaceLinkShortCodes",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "workspaceLinks",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "shortCode",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "longUrl",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "clicks",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "createdAt",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "sharable",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "isLinkDeleted",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
